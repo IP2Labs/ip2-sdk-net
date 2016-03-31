@@ -15,6 +15,6 @@ That can be installed from the Package Manager Console in Visual Studio with the
     PM> Install-Package IP2 
 
 Functionality 
-[Collect and Make payments] 
-[Sell first moving digital goods like airtime , data , tickets , shopping vouchers and lots more] 
-[View my account details] 
+1. [Collect and Make payments](/wiki/Payments) 
+2. [Sell first moving digital goods like airtime , data , tickets , shopping vouchers and lots more](/wiki/Commerce) 
+3. [View my account details](/wiki/Accounts)
