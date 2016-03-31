@@ -1,0 +1,7 @@
+D:\Applications\IP2\IP2\IP2.Payments\bin\Debug\IP2.Payments.dll
+D:\Applications\IP2\IP2\IP2.Payments\bin\Debug\IP2.Payments.pdb
+D:\Applications\IP2\IP2\IP2.Payments\obj\Debug\IP2.Payments.dll
+D:\Applications\IP2\IP2\IP2.Payments\obj\Debug\IP2.Payments.pdb
+D:\Applications\IP2\IP2\IP2.Payments\bin\Debug\IP2.Core.dll
+D:\Applications\IP2\IP2\IP2.Payments\bin\Debug\IP2.Core.pdb
+D:\Applications\IP2\IP2\IP2.Payments\obj\Debug\IP2.Payments.csprojResolveAssemblyReference.cache

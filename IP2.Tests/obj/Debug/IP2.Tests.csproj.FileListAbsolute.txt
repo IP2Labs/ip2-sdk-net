@@ -1,0 +1,13 @@
+D:\Applications\IP2\IP2\IP2.Tests\obj\Debug\IP2.Tests.csprojResolveAssemblyReference.cache
+D:\Applications\IP2\IP2\IP2.Tests\bin\Debug\IP2.Tests.dll.config
+D:\Applications\IP2\IP2\IP2.Tests\bin\Debug\IP2.Tests.dll
+D:\Applications\IP2\IP2\IP2.Tests\bin\Debug\IP2.Tests.pdb
+D:\Applications\IP2\IP2\IP2.Tests\bin\Debug\Newtonsoft.Json.dll
+D:\Applications\IP2\IP2\IP2.Tests\bin\Debug\RestSharp.dll
+D:\Applications\IP2\IP2\IP2.Tests\bin\Debug\Intelworld.Hmac.Auth.dll
+D:\Applications\IP2\IP2\IP2.Tests\bin\Debug\Newtonsoft.Json.xml
+D:\Applications\IP2\IP2\IP2.Tests\bin\Debug\RestSharp.xml
+D:\Applications\IP2\IP2\IP2.Tests\obj\Debug\IP2.Tests.dll
+D:\Applications\IP2\IP2\IP2.Tests\obj\Debug\IP2.Tests.pdb
+D:\Applications\IP2\IP2\IP2.Tests\bin\Debug\IP2.Gateway.dll
+D:\Applications\IP2\IP2\IP2.Tests\bin\Debug\IP2.Gateway.pdb
