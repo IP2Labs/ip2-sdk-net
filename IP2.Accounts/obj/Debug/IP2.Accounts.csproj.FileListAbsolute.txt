@@ -1,4 +1,0 @@
-D:\Applications\IP2\IP2\IP2.Accounts\bin\Debug\IP2.Accounts.dll
-D:\Applications\IP2\IP2\IP2.Accounts\bin\Debug\IP2.Accounts.pdb
-D:\Applications\IP2\IP2\IP2.Accounts\obj\Debug\IP2.Accounts.dll
-D:\Applications\IP2\IP2\IP2.Accounts\obj\Debug\IP2.Accounts.pdb

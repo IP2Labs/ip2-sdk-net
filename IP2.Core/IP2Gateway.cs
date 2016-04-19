@@ -1,7 +1,8 @@
 ﻿using IP2.Gateway.Enum;
-using IP2.Hmac.Auth.Hmac;
-using IP2.Hmac.Auth.Rest;
 using IP2.Hmac.Hash;
+using IP2.Hmac.IRest;
+using IP2.Hmac.Rest;
+using IP2.Hmac.Util;
 using Newtonsoft.Json;
 using RestSharp;
 using System;
@@ -15,14 +16,12 @@ namespace IP2.Gateway
     public class IP2Gateway
     {
         private IHmacRestClient hmacRestClient;
-        
 
-        public string SubscriptionId { get; set; }
         public string AccountId { get; set; }
-        public string Username { get; set; }
-        public string Password { get; set; }
         public Enviroment Enviroment { get; set; }
-
+        public string Password { get; set; }
+        public string SubscriptionId { get; set; }
+        public string Username { get; set; }
 
         /// <summary>
         /// Payment deposit 
@@ -32,44 +31,14 @@ namespace IP2.Gateway
         public Response Deposit(PaymentRequest request)
         {
             SelectEnviroment();
-            AddMetaData(request);
-            var resource = "debitpayments"; 
+            var resource = "debitpayments";
             IHmacRestRequest hmacRestRequest = RequestBuilder(request, resource);
             var resp = hmacRestClient.Execute(hmacRestRequest);
             return GetResponse(resp);
         }
-        /// <summary>
-        /// Payment request payment 
-        /// </summary>
-        /// <param name="request"></param>
-        /// <returns></returns>
-        public Response RequestPayment(PaymentRequest request)
-        {
-            SelectEnviroment();
-            AddMetaData(request);
-            var resource = "creditpayments";
-            IHmacRestRequest hmacRestRequest = RequestBuilder(request, resource);
-            var resp = hmacRestClient.Execute(hmacRestRequest);
-            return GetResponse(resp); 
-        }
-        /// <summary>
-        /// Commerce purchase 
-        /// </summary>
-        /// <param name="request"></param>
-        /// <returns></returns>
-        public Response Purchase(CommerceRequest request)
-        {
-            SelectEnviroment();
-            AddMetaData(request);
-            var resource = "debitwallets";
-            IHmacRestRequest hmacRestRequest = RequestBuilder(request, resource);
-            var resp = hmacRestClient.Execute(hmacRestRequest);
-            return GetResponse(resp); 
-        }
-
         public Account GetAccountDetails()
         {
-            Account account = null; 
+            Account account = null;
             SelectEnviroment();
             var resource = "accounts";
             var hmacRestRequest = new HmacRestRequest(Method.GET);
@@ -84,9 +53,30 @@ namespace IP2.Gateway
             }
             else
             {
-                throw new IP2GatewayException(resp.RestResponse.StatusDescription); 
+                throw new IP2GatewayException(resp.RestResponse.StatusDescription);
             }
-            return account; 
+            return account;
+        }
+
+        public Subscription GetSubscriptionDetails()
+        {
+            Subscription subscription = null;
+            SelectEnviroment();
+            var resource = "subscriptions";
+            var hmacRestRequest = new HmacRestRequest(Method.GET);
+            hmacRestRequest.RequestFormat = DataFormat.Json;
+            hmacRestRequest.Resource = new StringBuilder().Append(resource).Append("/{Id}").ToString();
+            hmacRestRequest.AddUrlSegment("Id", this.SubscriptionId);
+            var resp = hmacRestClient.Execute(hmacRestRequest);
+            if (resp.RestResponse.StatusCode == System.Net.HttpStatusCode.OK)
+            {
+                subscription = resp.DataToEntity<Subscription>();
+            }
+            else
+            {
+                throw new IP2GatewayException(resp.RestResponse.StatusDescription);
+            }
+            return subscription;
         }
 
         public List<Transaction> GetTransactions()
@@ -109,10 +99,81 @@ namespace IP2.Gateway
             {
                 throw new IP2GatewayException(resp.RestResponse.StatusDescription);
             }
-            return transactions; 
+            return transactions;
         }
 
+        /// <summary>
+        /// Commerce purchase 
+        /// </summary>
+        /// <param name="request"></param>
+        /// <returns></returns>
+        public Response Purchase(CommerceRequest request)
+        {
+            SelectEnviroment();
+            var resource = "debitwallets";
+            IHmacRestRequest hmacRestRequest = RequestBuilder(request, resource);
+            var resp = hmacRestClient.Execute(hmacRestRequest);
+            return GetResponse(resp);
+        }
+
+        /// <summary>
+        /// Payment request payment 
+        /// </summary>
+        /// <param name="request"></param>
+        /// <returns></returns>
+        public Response RequestPayment(PaymentRequest request)
+        {
+            SelectEnviroment();
+            var resource = "creditpayments";
+            IHmacRestRequest hmacRestRequest = RequestBuilder(request, resource);
+            var resp = hmacRestClient.Execute(hmacRestRequest);
+            return GetResponse(resp);
+        }
         #region Private methods
+        //Get response 
+        private static Response GetResponse(IHmacRestResponse resp)
+        {
+            if (resp.RestResponse.StatusCode == System.Net.HttpStatusCode.OK)
+            {
+                return Ok();
+            }
+            else
+            {
+                return new Response
+                {
+                    ResponseCode = 300, // TODO: Need to work on the response codes  
+                    ResponseMessage = resp.RestResponse.StatusDescription
+                };
+            }
+        }
+
+        //OK 
+        private static Response Ok()
+        {
+            return new Response
+            {
+                ResponseCode = 200,
+                ResponseMessage = "OK"
+            };
+        }
+
+        /// <summary>
+        /// Build request
+        /// </summary>
+        /// <param name="request"></param>
+        /// <param name="resource"></param>
+        /// <returns></returns>
+        private IHmacRestRequest RequestBuilder(Request request, string resource)
+        {
+            var hmacRestRequest = new HmacRestRequest(Method.POST);
+            hmacRestRequest.RequestFormat = DataFormat.Json;
+            hmacRestRequest.Resource = new StringBuilder().Append(resource).Append("?accountId={accountId}&subscriptionId={subscriptionId}").ToString();
+            hmacRestRequest.AddUrlSegment("accountId", this.AccountId);
+            hmacRestRequest.AddUrlSegment("subscriptionId", this.SubscriptionId);
+            hmacRestRequest.RestRequest.AddJsonBody(request);
+            return hmacRestRequest;
+        }
+
         /// <summary>; 
         /// Select enviroment 
         /// </summary>
@@ -128,60 +189,9 @@ namespace IP2.Gateway
             }
             else
             {
-                throw new IP2GatewayException("Enviroment is not set");
+                throw new IP2GatewayException("Environment is not set");
             }
         }
-        /// <summary>
-        /// Build request
-        /// </summary>
-        /// <param name="request"></param>
-        /// <param name="resource"></param>
-        /// <returns></returns>
-        private IHmacRestRequest RequestBuilder(Request request, string resource)
-        {
-            var hmacRestRequest = new HmacRestRequest(Method.POST);
-            hmacRestRequest.RequestFormat = DataFormat.Json;
-            hmacRestRequest.Resource = new StringBuilder().Append(resource).Append("?accountId={accountId}&subscriptionId={subscriptionId}").ToString();
-            hmacRestRequest.AddUrlSegment("accountId", this.AccountId);
-            hmacRestRequest.AddUrlSegment("subscriptionId", this.SubscriptionId);
-            hmacRestRequest.RestRequest.AddJsonBody(request);
-            return hmacRestRequest; 
-        }
-        /// <summary>
-        /// Add metadata
-        /// </summary>
-        /// <param name="request"></param>
-         void AddMetaData(Request request)
-        {
-            var metaDataParams = new Dictionary<string, object>();
-            var metaData = JsonConvert.SerializeObject(metaDataParams);
-            request.MetaData = metaData;
-        } 
-        //Get response 
-         private static Response GetResponse(IHmacRestResponse resp)
-         {
-             if (resp.RestResponse.StatusCode == System.Net.HttpStatusCode.OK)
-             {
-                 return Ok();
-             }
-             else
-             {
-                 return new Response
-                 {
-                     ResponseCode = 300, //Need to work on the response codes  
-                     ResponseMessage = resp.RestResponse.StatusDescription
-                 };
-             }
-         }
-        //OK 
-         private static Response Ok()
-         {
-             return new Response
-             {
-                 ResponseCode = 200,
-                 ResponseMessage = "OK"
-             };
-         }
         #endregion
     }
 }

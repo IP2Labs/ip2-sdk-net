@@ -9,7 +9,7 @@ namespace IP2.Gateway.Enum
     public enum Product
     {
         NOTSET,
-        PAYMENTS, 
+        PAYMENT, 
         COMMERCE
     }
 }

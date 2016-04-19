@@ -15,7 +15,6 @@ namespace IP2.Gateway
         public string Memo { get; set; }
         public string Channel { get; set; }
         public Dictionary<string, object> ChannelReference { get; set; }
-        
-        public string MetaData { get; set; }
+        public Dictionary<string, object> MetaData { get; set; }
     }
 }

@@ -1,10 +1,11 @@
-D:\Applications\IP2\IP2\IP2.Core\bin\Debug\IP2.Gateway.dll
-D:\Applications\IP2\IP2\IP2.Core\bin\Debug\IP2.Gateway.pdb
-D:\Applications\IP2\IP2\IP2.Core\bin\Debug\Intelworld.Hmac.Auth.dll
-D:\Applications\IP2\IP2\IP2.Core\bin\Debug\Newtonsoft.Json.dll
-D:\Applications\IP2\IP2\IP2.Core\bin\Debug\RestSharp.dll
-D:\Applications\IP2\IP2\IP2.Core\bin\Debug\Newtonsoft.Json.xml
-D:\Applications\IP2\IP2\IP2.Core\bin\Debug\RestSharp.xml
-D:\Applications\IP2\IP2\IP2.Core\obj\Debug\IP2.Gateway.dll
-D:\Applications\IP2\IP2\IP2.Core\obj\Debug\IP2.Gateway.pdb
-D:\Applications\IP2\IP2\IP2.Core\obj\Debug\IP2.Gateway.csprojResolveAssemblyReference.cache
+C:\Users\Talemwa\Documents\Visual Studio 2012\Projects\ip2-sdk-net\IP2.Core\bin\Debug\IP2.Gateway.dll
+C:\Users\Talemwa\Documents\Visual Studio 2012\Projects\ip2-sdk-net\IP2.Core\bin\Debug\IP2.Gateway.pdb
+C:\Users\Talemwa\Documents\Visual Studio 2012\Projects\ip2-sdk-net\IP2.Core\bin\Debug\IP2.Hmac.dll
+C:\Users\Talemwa\Documents\Visual Studio 2012\Projects\ip2-sdk-net\IP2.Core\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Talemwa\Documents\Visual Studio 2012\Projects\ip2-sdk-net\IP2.Core\bin\Debug\RestSharp.dll
+C:\Users\Talemwa\Documents\Visual Studio 2012\Projects\ip2-sdk-net\IP2.Core\bin\Debug\IP2.Hmac.pdb
+C:\Users\Talemwa\Documents\Visual Studio 2012\Projects\ip2-sdk-net\IP2.Core\bin\Debug\Newtonsoft.Json.xml
+C:\Users\Talemwa\Documents\Visual Studio 2012\Projects\ip2-sdk-net\IP2.Core\bin\Debug\RestSharp.xml
+C:\Users\Talemwa\Documents\Visual Studio 2012\Projects\ip2-sdk-net\IP2.Core\obj\Debug\IP2.Gateway.csprojResolveAssemblyReference.cache
+C:\Users\Talemwa\Documents\Visual Studio 2012\Projects\ip2-sdk-net\IP2.Core\obj\Debug\IP2.Gateway.dll
+C:\Users\Talemwa\Documents\Visual Studio 2012\Projects\ip2-sdk-net\IP2.Core\obj\Debug\IP2.Gateway.pdb

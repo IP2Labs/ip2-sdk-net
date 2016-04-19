@@ -26,7 +26,6 @@ namespace IP2.Tests
         [TestMethod]
         public void Test_That_Can_Purchase_Commerce_Item()
         {
-         
             var response = gateway.Purchase(request);
 
             //check the response 
@@ -41,7 +40,9 @@ namespace IP2.Tests
             }
         
         }
+
         #region Helpers
+
         private CommerceRequest RequestBuilder()
         {
             ///Create the gateway 
@@ -88,6 +89,7 @@ namespace IP2.Tests
 
             return request;
         }
+
         /// <summary>
         /// Airtime params
         /// </summary>

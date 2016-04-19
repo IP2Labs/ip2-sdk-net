@@ -1,13 +1,13 @@
-D:\Applications\IP2\IP2\IP2.Tests\obj\Debug\IP2.Tests.csprojResolveAssemblyReference.cache
-D:\Applications\IP2\IP2\IP2.Tests\bin\Debug\IP2.Tests.dll.config
-D:\Applications\IP2\IP2\IP2.Tests\bin\Debug\IP2.Tests.dll
-D:\Applications\IP2\IP2\IP2.Tests\bin\Debug\IP2.Tests.pdb
-D:\Applications\IP2\IP2\IP2.Tests\bin\Debug\Newtonsoft.Json.dll
-D:\Applications\IP2\IP2\IP2.Tests\bin\Debug\RestSharp.dll
-D:\Applications\IP2\IP2\IP2.Tests\bin\Debug\Intelworld.Hmac.Auth.dll
-D:\Applications\IP2\IP2\IP2.Tests\bin\Debug\Newtonsoft.Json.xml
-D:\Applications\IP2\IP2\IP2.Tests\bin\Debug\RestSharp.xml
-D:\Applications\IP2\IP2\IP2.Tests\obj\Debug\IP2.Tests.dll
-D:\Applications\IP2\IP2\IP2.Tests\obj\Debug\IP2.Tests.pdb
-D:\Applications\IP2\IP2\IP2.Tests\bin\Debug\IP2.Gateway.dll
-D:\Applications\IP2\IP2\IP2.Tests\bin\Debug\IP2.Gateway.pdb
+C:\Users\Talemwa\Documents\Visual Studio 2012\Projects\ip2-sdk-net\IP2.Tests\bin\Debug\IP2.Tests.dll.config
+C:\Users\Talemwa\Documents\Visual Studio 2012\Projects\ip2-sdk-net\IP2.Tests\bin\Debug\IP2.Tests.dll
+C:\Users\Talemwa\Documents\Visual Studio 2012\Projects\ip2-sdk-net\IP2.Tests\bin\Debug\IP2.Tests.pdb
+C:\Users\Talemwa\Documents\Visual Studio 2012\Projects\ip2-sdk-net\IP2.Tests\bin\Debug\IP2.Gateway.dll
+C:\Users\Talemwa\Documents\Visual Studio 2012\Projects\ip2-sdk-net\IP2.Tests\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Talemwa\Documents\Visual Studio 2012\Projects\ip2-sdk-net\IP2.Tests\bin\Debug\RestSharp.dll
+C:\Users\Talemwa\Documents\Visual Studio 2012\Projects\ip2-sdk-net\IP2.Tests\bin\Debug\IP2.Hmac.dll
+C:\Users\Talemwa\Documents\Visual Studio 2012\Projects\ip2-sdk-net\IP2.Tests\bin\Debug\IP2.Gateway.pdb
+C:\Users\Talemwa\Documents\Visual Studio 2012\Projects\ip2-sdk-net\IP2.Tests\bin\Debug\RestSharp.xml
+C:\Users\Talemwa\Documents\Visual Studio 2012\Projects\ip2-sdk-net\IP2.Tests\bin\Debug\IP2.Hmac.pdb
+C:\Users\Talemwa\Documents\Visual Studio 2012\Projects\ip2-sdk-net\IP2.Tests\obj\Debug\IP2.Tests.csprojResolveAssemblyReference.cache
+C:\Users\Talemwa\Documents\Visual Studio 2012\Projects\ip2-sdk-net\IP2.Tests\obj\Debug\IP2.Tests.dll
+C:\Users\Talemwa\Documents\Visual Studio 2012\Projects\ip2-sdk-net\IP2.Tests\obj\Debug\IP2.Tests.pdb
